@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1150" role="img" aria-labelledby="title desc">
+  <title id="title">Platzhalter für ein Porträtfoto</title>
+  <desc id="desc">Elegante abstrakte Porträtsilhouette vor dunklem Farbverlauf.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#211022"/>
+      <stop offset=".48" stop-color="#0d0a11"/>
+      <stop offset="1" stop-color="#3d1726"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="30%" r="62%">
+      <stop offset="0" stop-color="#e7c77e" stop-opacity=".36"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grain" width="140" height="140" patternUnits="userSpaceOnUse">
+      <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/></filter>
+      <rect width="140" height="140" filter="url(#noise)" opacity=".06"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="1150" fill="url(#bg)"/>
+  <rect width="900" height="1150" fill="url(#halo)"/>
+  <circle cx="450" cy="370" r="150" fill="#d8c8bd" opacity=".17"/>
+  <path d="M190 1050c20-300 150-450 260-450s240 150 260 450z" fill="#d8c8bd" opacity=".14"/>
+  <path d="M300 405c20 90 80 145 150 145s130-55 150-145" fill="none" stroke="#e6d8cb" stroke-width="3" opacity=".2"/>
+  <rect width="900" height="1150" fill="url(#grain)"/>
+  <g fill="#f2e9df" text-anchor="middle">
+    <text x="450" y="1010" font-family="Georgia,serif" font-size="28" letter-spacing="7" opacity=".7">PORTRAIT PLACEHOLDER</text>
+    <text x="450" y="1055" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" opacity=".44">PORTRÄTFOTO EINFÜGEN</text>
+  </g>
+</svg>
