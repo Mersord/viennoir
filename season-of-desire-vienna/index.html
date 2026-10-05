@@ -37,6 +37,346 @@
 <meta content="Season of Desire – Ein Wiener Skandal – Bridgerton inspired." name="twitter:image:alt"/>
 <link href="../assets/css/site-performance.css?v=20260927-seo1" rel="stylesheet"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"PerformingGroup","@id":"https://www.viennoir.com/#organization","name":"Vien.noir","alternateName":"Vien Noir","legalName":"Verein Opera Moderne Wien","url":"https://www.viennoir.com/","logo":{"@type":"ImageObject","url":"https://www.viennoir.com/assets/img/VienNoir/ViennoirLogo-white-TRANSPARENT.png"},"email":"office@viennoir.com","address":{"@type":"PostalAddress","addressLocality":"Wien","addressCountry":"AT"},"sameAs":["https://instagram.com/vien.noir.official","https://facebook.com/vien.noir.official","https://tiktok.com/@vien.noir.official","https://www.linkedin.com/company/vien-noir","https://youtube.com/@viennoir9043"]},{"@type":"WebSite","@id":"https://www.viennoir.com/#website","url":"https://www.viennoir.com/","name":"Vien.noir","alternateName":"Vien Noir","inLanguage":["de-AT","en"],"publisher":{"@id":"https://www.viennoir.com/#organization"}},{"@type":"WebPage","@id":"https://www.viennoir.com/season-of-desire-vienna/#webpage","url":"https://www.viennoir.com/season-of-desire-vienna/","name":"Season of Desire - Live-Show in Wien | Vien.noir","description":"Season of Desire verbindet Pop-Klassik, Live-Gesang, Luftakrobatik und Wiener Intrigen zu einer opulenten Bühnenshow.","inLanguage":"de-AT","isPartOf":{"@id":"https://www.viennoir.com/#website"},"about":{"@id":"https://www.viennoir.com/#organization"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://www.viennoir.com/assets/img/desire-wide.webp","caption":"Season of Desire – Ein Wiener Skandal – Bridgerton inspired."}}]}</script>
+
+<!-- Season of Desire FAQ: styles and structured data -->
+<style id="season-of-desire-faq-styles">
+/* Season of Desire FAQ. All rules are limited to this new section. */
+#faq.show-faq {
+  position: relative;
+  padding-block: clamp(72px, 8vw, 120px);
+  color: var(--cream, #f3e9dc);
+  background:
+    radial-gradient(ellipse at 14% 42%, rgba(77, 27, 86, 0.15), transparent 60%),
+    var(--void, #08070a);
+  scroll-margin-top: calc(var(--header-h, 90px) + 24px);
+}
+#faq.show-faq::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: max(var(--gutter, 20px), calc((100% - var(--wrap, 1380px)) / 2 + var(--gutter, 20px)));
+  right: max(var(--gutter, 20px), calc((100% - var(--wrap, 1380px)) / 2 + var(--gutter, 20px)));
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-strong, rgba(243, 233, 220, 0.26)), transparent);
+  pointer-events: none;
+}
+#faq.show-faq .show-faq__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(44px, 7vw, 110px);
+  align-items: start;
+}
+#faq.show-faq .show-faq__heading {
+  position: sticky;
+  top: calc(var(--header-h, 90px) + 34px);
+  min-width: 0;
+}
+#faq.show-faq .show-faq__heading .kicker {
+  color: var(--show-accent, var(--lilac, #c4a9dd));
+}
+#faq.show-faq #faq-titel {
+  margin: 20px 0 0;
+  font-family: var(--display, "Cormorant Garamond", Georgia, serif);
+  font-weight: 500;
+  text-wrap: balance;
+}
+#faq.show-faq .show-faq__title {
+  display: block;
+  font-size: clamp(3rem, 5.7vw, 5.7rem);
+  line-height: 0.98;
+}
+#faq.show-faq .show-faq__title .italic {
+  display: block;
+  color: var(--show-accent, var(--lilac, #c4a9dd));
+  font-style: italic;
+}
+#faq.show-faq .show-faq__subtitle {
+  display: block;
+  max-width: 29ch;
+  margin-top: 26px;
+  color: var(--muted, #aa9ba2);
+  font-family: var(--sans, "Manrope", "Helvetica Neue", Arial, sans-serif);
+  font-size: clamp(0.96rem, 1.15vw, 1.08rem);
+  font-weight: 400;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+#faq.show-faq .show-faq__show-name {
+  color: var(--paper, #dfd2c3);
+  white-space: nowrap;
+}
+#faq.show-faq .show-faq__list {
+  min-width: 0;
+  border-top: 1px solid var(--line, rgba(243, 233, 220, 0.14));
+}
+#faq.show-faq .show-faq__item {
+  margin: 0;
+  border-bottom: 1px solid var(--line, rgba(243, 233, 220, 0.14));
+}
+#faq.show-faq .show-faq__item > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 76px;
+  margin: 0;
+  padding: 23px 0;
+  color: var(--cream, #f3e9dc);
+  font-family: var(--sans, "Manrope", "Helvetica Neue", Arial, sans-serif);
+  font-size: clamp(1rem, 1.25vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.6;
+  list-style: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+#faq.show-faq .show-faq__item > summary::-webkit-details-marker {
+  display: none;
+}
+#faq.show-faq .show-faq__item > summary::marker {
+  content: "";
+}
+#faq.show-faq .show-faq__question {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+#faq.show-faq .show-faq__icon {
+  position: relative;
+  display: block;
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  color: var(--show-accent, var(--lilac, #c4a9dd));
+}
+#faq.show-faq .show-faq__icon::before,
+#faq.show-faq .show-faq__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+}
+#faq.show-faq .show-faq__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+#faq.show-faq .show-faq__item[open] > summary {
+  color: var(--show-accent, var(--lilac, #c4a9dd));
+}
+#faq.show-faq .show-faq__item[open] .show-faq__icon::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+#faq.show-faq .show-faq__item > summary:focus-visible,
+#faq.show-faq .show-faq__answer a:focus-visible {
+  outline: 2px solid var(--show-accent, var(--lilac, #c4a9dd));
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+#faq.show-faq .show-faq__answer {
+  padding: 0 50px 27px 0;
+  color: var(--paper, #dfd2c3);
+  font-family: var(--sans, "Manrope", "Helvetica Neue", Arial, sans-serif);
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  font-weight: 400;
+  line-height: 1.85;
+  overflow-wrap: break-word;
+}
+#faq.show-faq .show-faq__answer p {
+  margin: 0 0 1em;
+}
+#faq.show-faq .show-faq__answer ul {
+  margin: 0 0 1em;
+  padding-left: 1.15em;
+  list-style: disc;
+}
+#faq.show-faq .show-faq__answer li {
+  margin: 0 0 0.55em;
+  padding-left: 0.25em;
+}
+#faq.show-faq .show-faq__answer li::marker {
+  color: var(--show-accent, var(--lilac, #c4a9dd));
+}
+#faq.show-faq .show-faq__answer strong {
+  color: var(--cream, #f3e9dc);
+  font-weight: 600;
+}
+#faq.show-faq .show-faq__answer > :last-child,
+#faq.show-faq .show-faq__answer li:last-child {
+  margin-bottom: 0;
+}
+#faq.show-faq .show-faq__answer a {
+  color: var(--show-accent, var(--lilac, #c4a9dd));
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+@media (hover: hover) {
+  #faq.show-faq .show-faq__item > summary:hover,
+  #faq.show-faq .show-faq__answer a:hover {
+    color: var(--show-accent, var(--lilac, #c4a9dd));
+  }
+}
+@media (max-width: 900px) {
+  #faq.show-faq .show-faq__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+  #faq.show-faq .show-faq__heading {
+    position: static;
+  }
+  #faq.show-faq .show-faq__title .italic {
+    display: inline;
+  }
+  #faq.show-faq .show-faq__subtitle {
+    max-width: 48ch;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 650px) {
+  #faq.show-faq .show-faq__layout {
+    gap: 32px;
+  }
+  #faq.show-faq .show-faq__title {
+    font-size: clamp(2.65rem, 10.7vw, 3.65rem);
+    line-height: 1.05;
+  }
+  #faq.show-faq .show-faq__item > summary {
+    gap: 16px;
+    min-height: 72px;
+    padding-block: 21px;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  #faq.show-faq .show-faq__icon {
+    flex-basis: 22px;
+    width: 22px;
+  }
+  #faq.show-faq .show-faq__answer {
+    padding-right: 0;
+    padding-bottom: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #faq.show-faq .show-faq__item > summary,
+  #faq.show-faq .show-faq__icon::after {
+    transition: none;
+  }
+}
+@media print {
+  #faq.show-faq .show-faq__heading {
+    position: static;
+  }
+}
+</style>
+<script id="season-of-desire-faq-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist „Season of Desire – Ein Wiener Skandal“?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "„Season of Desire“ ist eine Bridgerton-inspirierte Bühnenshow von Vien.noir im Das Vindobona in Wien. Im Zentrum steht Lady Arabella Fairmont, die sich während der Wiener Saison zwischen Verlangen und Pflicht entscheiden muss – ein Ball, ein Liebesdreieck und eine Gesellschaft, in der jedes Lächeln eine Absicht verbirgt. Die Inszenierung verbindet Live-Gesang, Luftakrobatik und sinnliche Theatralik, Pop trifft auf Klassik: Bridgerton-Atmosphäre, erzählt mit Wiener Handschrift."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist Season of Desire eine Bridgerton-Show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Season of Desire ist von Bridgerton inspiriert, aber keine offizielle Netflix-Produktion und keine Nachspielung der Serie. Wir erzählen eine eigene Geschichte in derselben Welt aus Ballsaal, Gerüchten und Gesellschaftsdruck – mit Regency-Kostümen, Live-Gesang und Luftakrobatik."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich Bridgerton gesehen haben, um die Show zu verstehen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Die Handlung um Lady Arabella Fairmont ist in sich abgeschlossen und funktioniert ohne Vorkenntnisse. Bridgerton-Fans entdecken aber zahlreiche Anspielungen auf das Setting, die Etikette und die Musiksprache der Serie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist Season of Desire eine Dinnershow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Die Bridgerton-inspirierte Show ist eine reine Bühnenshow, kein Dinner-Arrangement – das Ticket umfasst ausschließlich die Vorstellung. Essen und Getränke können Sie unabhängig davon im Restaurant des Vindobona bestellen, das eine Stunde vor Showbeginn öffnet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wann finden die Vorstellungen von Season of Desire statt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Für die Bridgerton-inspirierte Show sind drei Termine angesetzt: Freitag, 16. Oktober 2026 (Premiere), Freitag, 22. Jänner 2027 und Freitag, 19. Februar 2027 – jeweils um 19:30 Uhr."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wann ist Einlass und wann beginnt die Show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Einlass und Gastronomie starten um 18:30 Uhr, die Vorstellung beginnt um 19:30 Uhr. Die Plätze werden bei der Ankunft zugewiesen, daher empfiehlt sich eine rechtzeitige Ankunft."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wo in Wien findet die Bridgerton-inspirierte Show statt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Im Das Vindobona, Wallensteinplatz 6, 1200 Wien."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wo bekomme ich Tickets für Season of Desire?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tickets erhalten Sie über vindobona.wien. Die Theaterkassa des Vindobona ist mittwochs von 14:00 bis 18:00 Uhr sowie an Vorstellungstagen (Mo–Sa) von 17:30 bis 19:00 Uhr erreichbar, telefonisch unter +43 1 512 39 03 (Durchwahl 2)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Ticketkategorien gibt es?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das Vindobona vergibt vier Kategorien: KAT 1 – Premium-Tische im vorderen Bereich oder in den Logen, für Paare und kleine Gruppen. KAT 2 – größere Gemeinschaftstische. KAT 3 – Zweiertische im hinteren Bereich, Reihe 1. KAT 4 – Zweiertische im hinteren Bereich, Reihen 2–3. Die konkrete Platzzuweisung innerhalb der Kategorie erfolgt bei der Ankunft."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich vor der Show etwas essen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Das Restaurant im Vindobona öffnet eine Stunde vor Showbeginn. Bestellungen bis 19:00 Uhr werden noch vor der Vorstellung serviert, spätere Bestellungen kommen in der Pause an den Tisch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es eine Pause?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, die Vorstellung hat eine Pause. In dieser Zeit werden auch später aufgegebene Bestellungen aus dem Restaurant serviert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Für wen ist Season of Desire gedacht?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Für alle, die einen Abend zwischen Oper, Varieté und Pop suchen: Bridgerton-Fans, Freundinnen- und Paarabende, Geburtstagsrunden und Firmenfeiern. Die Show wird auf Deutsch gespielt, einzelne Songs werden in der Originalsprache gesungen."
+      }
+    }
+  ]
+}
+</script>
+<!-- Season of Desire FAQ: head end -->
 </head>
 <body class="show-page show-page--desire">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -140,6 +480,150 @@
 </div>
 </div>
 </section>
+<!-- Season of Desire FAQ: begin -->
+<section class="section show-faq" id="faq" aria-labelledby="faq-titel">
+  <div class="shell show-faq__layout">
+    <header class="show-faq__heading">
+      <p class="kicker">Season of Desire &middot; FAQ</p>
+      <h2 id="faq-titel"><span class="show-faq__title">Häufige <span class="italic">Fragen</span></span> <span class="show-faq__subtitle">zur Bridgerton-inspirierten Show <span class="show-faq__show-name">Season of Desire</span></span></h2>
+    </header>
+    <div class="show-faq__list">
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Was ist „Season of Desire – Ein Wiener Skandal"?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>„Season of Desire" ist eine Bridgerton-inspirierte Bühnenshow von Vien.noir im Das Vindobona in Wien. Im Zentrum steht Lady Arabella Fairmont, die sich während der Wiener Saison zwischen Verlangen und Pflicht entscheiden muss – ein Ball, ein Liebesdreieck und eine Gesellschaft, in der jedes Lächeln eine Absicht verbirgt. Die Inszenierung verbindet Live-Gesang, Luftakrobatik und sinnliche Theatralik, Pop trifft auf Klassik: Bridgerton-Atmosphäre, erzählt mit Wiener Handschrift.</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Ist Season of Desire eine Bridgerton-Show?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Season of Desire ist von Bridgerton inspiriert, aber keine offizielle Netflix-Produktion und keine Nachspielung der Serie. Wir erzählen eine eigene Geschichte in derselben Welt aus Ballsaal, Gerüchten und Gesellschaftsdruck – mit Regency-Kostümen, Live-Gesang und Luftakrobatik. Wer die Stimmung von Bridgerton mag, ist hier genau richtig.</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Muss ich Bridgerton gesehen haben, um die Show zu verstehen?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Nein. Die Handlung um Lady Arabella Fairmont ist in sich abgeschlossen und funktioniert ohne Vorkenntnisse. Bridgerton-Fans entdecken aber zahlreiche Anspielungen auf das Setting, die Etikette und die Musiksprache der Serie.</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Ist Season of Desire eine Dinnershow?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Nein. Die Bridgerton-inspirierte Show ist eine reine Bühnenshow, kein Dinner-Arrangement – das Ticket umfasst ausschließlich die Vorstellung. Essen und Getränke können Sie unabhängig davon im Restaurant des Vindobona bestellen, das eine Stunde vor Showbeginn öffnet.</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Wann finden die Vorstellungen statt?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Für die Bridgerton-inspirierte Show sind drei Termine angesetzt:</p>
+        <ul>
+          <li><strong>Freitag, 16. Oktober 2026</strong> – Premiere, 19:30 Uhr</li>
+          <li><strong>Freitag, 22. Jänner 2027</strong> – 19:30 Uhr</li>
+          <li><strong>Freitag, 19. Februar 2027</strong> – 19:30 Uhr</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Wann ist Einlass und wann beginnt die Show?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Einlass und Gastronomie starten um 18:30 Uhr, die Vorstellung beginnt um 19:30 Uhr. Wir empfehlen, rechtzeitig zu kommen – die Plätze werden bei der Ankunft zugewiesen.</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Wo in Wien findet die Bridgerton-inspirierte Show statt?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Im Das Vindobona, Wallensteinplatz 6, 1200 Wien.</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Wo bekomme ich Tickets für Season of Desire?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Tickets erhalten Sie über <a href="https://vindobona.wien" rel="noopener">vindobona.wien</a>. Die Theaterkassa des Vindobona ist mittwochs von 14:00 bis 18:00 Uhr sowie an Vorstellungstagen (Mo–Sa) von 17:30 bis 19:00 Uhr erreichbar, telefonisch unter +43 1 512 39 03 (Durchwahl 2).</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Welche Ticketkategorien gibt es?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Das Vindobona ist bestuhlt und vergibt vier Kategorien:</p>
+        <ul>
+          <li><strong>KAT 1</strong> – Premium-Tische im vorderen Bereich oder in den Logen, für Paare und kleine Gruppen</li>
+          <li><strong>KAT 2</strong> – größere Gemeinschaftstische</li>
+          <li><strong>KAT 3</strong> – Zweiertische im hinteren Bereich, Reihe 1</li>
+          <li><strong>KAT 4</strong> – Zweiertische im hinteren Bereich, Reihen 2–3</li>
+        </ul>
+        <p>Die konkrete Platzzuweisung innerhalb der Kategorie erfolgt bei der Ankunft.</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Kann ich vor der Show etwas essen?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Ja. Das Restaurant im Vindobona öffnet eine Stunde vor Showbeginn. Bestellungen, die bis 19:00 Uhr aufgegeben werden, servieren wir noch vor der Vorstellung – alles danach kommt in der Pause an den Tisch.</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Gibt es eine Pause?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Ja, die Vorstellung hat eine Pause. In dieser Zeit werden auch später aufgegebene Bestellungen aus dem Restaurant serviert.</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Für wen ist Season of Desire gedacht?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Für alle, die einen Abend zwischen Oper, Varieté und Pop suchen: Bridgerton-Fans, Freundinnen- und Paarabende, Geburtstagsrunden und Firmenfeiern, die mehr wollen als ein Konzert. Die Show ist auf Deutsch gespielt, einzelne Songs werden in der Originalsprache gesungen.</p>
+      </div>
+    </details>
+
+    <!-- =========================================================
+         OFFENE FRAGEN – bitte je eine Angabe ergänzen und dann
+         einkommentieren. Erst danach auch ins Schema übernehmen.
+         ========================================================= -->
+
+    <!--
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Wie lange dauert die Show?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>Die Vorstellung dauert rund [XX] Minuten inklusive Pause.</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Gibt es einen Dresscode – darf ich im Bridgerton-Look kommen?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>[z. B.: Einen verpflichtenden Dresscode gibt es nicht. Viele Gäste nutzen den Abend aber für festliche Garderobe – wer im Bridgerton- oder Regency-Stil kommt, mit Korsage, Handschuhen oder Frack, ist bei Season of Desire genau richtig.]</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Ab welchem Alter ist die Show geeignet?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>[z. B.: Wir empfehlen die Show ab XX Jahren.]</p>
+      </div>
+    </details>
+
+    <details class="show-faq__item">
+      <summary><span class="show-faq__question">Wie komme ich zum Vindobona?</span><span class="show-faq__icon" aria-hidden="true"></span></summary>
+      <div class="show-faq__answer">
+        <p>[Öffentliche Anreise ergänzen: U-Bahn-Station, Straßenbahn- und Buslinien, Parkmöglichkeiten im 20. Bezirk, Barrierefreiheit.]</p>
+      </div>
+    </details>
+    -->
+
+      </div>
+  </div>
+</section>
+<!-- Season of Desire FAQ: end -->
 <section class="section show-cta">
 <div class="shell show-cta__inner" data-reveal=""><p class="kicker kicker--plain">Vien.noir presents</p><h2>Bereit für eine Nacht in der <span class="italic">Anderswelt?</span></h2><div class="button-row"><a class="button button--gold" href="https://vindobona.wien/events/ladies-of-bond-3" rel="noopener" target="_blank">Tickets buchen</a><a class="button" href="../programm/">Alle Termine</a></div></div>
 </section>
