@@ -1,0 +1,186 @@
+{
+  "stats": {
+    "html_files": 64,
+    "forms": 40,
+    "indexable_pages": 36,
+    "json_ld_nodes": 170,
+    "breadcrumbs": 34,
+    "events": 18
+  },
+  "errors": [],
+  "warnings": [],
+  "media_not_in_supplied_zip": [
+    "/assets/img/LadiesOfBond/Doro.jpg",
+    "/assets/img/LadiesOfBond/Services.webp",
+    "/assets/img/LadiesOfBond/cards/andrii-card.webp",
+    "/assets/img/LadiesOfBond/cards/desire-card.webp",
+    "/assets/img/LadiesOfBond/cards/doro-card.webp",
+    "/assets/img/LadiesOfBond/cards/lilian-card.webp",
+    "/assets/img/LadiesOfBond/cards/moneypenny-card.webp",
+    "/assets/img/LadiesOfBond/cards/sandra-card.webp",
+    "/assets/img/LadiesOfBond/cards/villain-card.webp",
+    "/assets/img/SantaBaby/cards/clara-card.webp",
+    "/assets/img/SantaBaby/cards/holly-card.webp",
+    "/assets/img/SantaBaby/cards/ivy-card.webp",
+    "/assets/img/SantaBaby/cards/jolly-card.webp",
+    "/assets/img/SantaBaby/cards/noelle-card.webp",
+    "/assets/img/SantaBaby/cards/santa-card.webp",
+    "/assets/img/SantaBaby/cards/winter-card.webp",
+    "/assets/img/SeasonOfDesire/cards/arabella-card.webp",
+    "/assets/img/SeasonOfDesire/cards/blackwood-card.webp",
+    "/assets/img/SeasonOfDesire/cards/cora-card.webp",
+    "/assets/img/SeasonOfDesire/cards/duchess-card.webp",
+    "/assets/img/SeasonOfDesire/cards/elise-card.webp",
+    "/assets/img/SeasonOfDesire/cards/genevra-card.webp",
+    "/assets/img/SeasonOfDesire/cards/harrow-card.webp",
+    "/assets/img/VienNoir/DavidEngel.png",
+    "/assets/img/VienNoir/RebeccaGreenstein.png",
+    "/assets/img/VienNoir/ViennoirLogo-white-TRANSPARENT.png",
+    "/assets/img/bond-poster.webp",
+    "/assets/img/bond-wide.webp",
+    "/assets/img/desire-poster.webp",
+    "/assets/img/desire-wide.webp",
+    "/assets/img/favicon.png",
+    "/assets/img/santa-poster.webp",
+    "/assets/img/santa-wide.webp",
+    "/assets/media/RoxanneReel-Cut.mp4",
+    "/assets/media/VienNoirSmoke-poster.webp"
+  ],
+  "browser_checks": [
+    {
+      "viewport": 1440,
+      "scroll": 1440,
+      "main": true,
+      "h1": 1,
+      "page": "season-of-desire-vienna/2026-10-16/",
+      "mobile": false,
+      "errors": [],
+      "schema_in_head": 1,
+      "ticket": "https://vindobona.wien/events/ladies-of-bond-3",
+      "language_en": "../../en/season-of-desire-vienna/2026-10-16/"
+    },
+    {
+      "viewport": 1440,
+      "scroll": 1440,
+      "main": true,
+      "h1": 1,
+      "page": "en/santa-baby-dinner-show/2026-11-27/",
+      "mobile": false,
+      "errors": []
+    },
+    {
+      "viewport": 1440,
+      "scroll": 1440,
+      "main": true,
+      "h1": 1,
+      "page": "programm/",
+      "mobile": false,
+      "errors": []
+    },
+    {
+      "viewport": 1440,
+      "scroll": 1440,
+      "main": true,
+      "h1": 1,
+      "page": "season-of-desire-vienna/",
+      "mobile": false,
+      "errors": [],
+      "faq_count": 12,
+      "faq_opens": true
+    },
+    {
+      "viewport": 1440,
+      "scroll": 1440,
+      "main": true,
+      "h1": 1,
+      "page": "kontakt/",
+      "mobile": false,
+      "errors": []
+    },
+    {
+      "viewport": 1440,
+      "scroll": 1440,
+      "main": true,
+      "h1": 1,
+      "page": "/",
+      "mobile": false,
+      "errors": [],
+      "video_autoplay": true,
+      "video_src": "assets/media/RoxanneReel-Cut.mp4",
+      "canonicals_in_head": 1
+    },
+    {
+      "viewport": 390,
+      "scroll": 390,
+      "main": true,
+      "h1": 1,
+      "page": "season-of-desire-vienna/2026-10-16/",
+      "mobile": true,
+      "errors": [],
+      "schema_in_head": 1,
+      "ticket": "https://vindobona.wien/events/ladies-of-bond-3",
+      "language_en": "../../en/season-of-desire-vienna/2026-10-16/",
+      "menu_opens": true,
+      "escape_closes": true
+    },
+    {
+      "viewport": 390,
+      "scroll": 390,
+      "main": true,
+      "h1": 1,
+      "page": "en/santa-baby-dinner-show/2026-11-27/",
+      "mobile": true,
+      "errors": []
+    },
+    {
+      "viewport": 390,
+      "scroll": 390,
+      "main": true,
+      "h1": 1,
+      "page": "programm/",
+      "mobile": true,
+      "errors": []
+    },
+    {
+      "viewport": 390,
+      "scroll": 390,
+      "main": true,
+      "h1": 1,
+      "page": "season-of-desire-vienna/",
+      "mobile": true,
+      "errors": [],
+      "faq_count": 12,
+      "faq_opens": true
+    },
+    {
+      "viewport": 390,
+      "scroll": 390,
+      "main": true,
+      "h1": 1,
+      "page": "kontakt/",
+      "mobile": true,
+      "errors": []
+    },
+    {
+      "viewport": 390,
+      "scroll": 390,
+      "main": true,
+      "h1": 1,
+      "page": "/",
+      "mobile": true,
+      "errors": [],
+      "video_autoplay": true,
+      "video_src": "assets/media/RoxanneReel-Cut.mp4",
+      "canonicals_in_head": 1
+    },
+    {
+      "expiry_removes_ticket": true,
+      "expiry_shows_note": true
+    },
+    {
+      "no_js_h1_visible": true,
+      "no_js_ticket_visible": true,
+      "no_js_schema": 1
+    }
+  ]
+}
