@@ -1,0 +1,42 @@
+# Vien.noir
+
+> Vien.noir is a Vienna-based live-entertainment world combining live music, aerial acrobatics, dance, burlesque and theatrical storytelling. The website is bilingual; German is the primary language and English versions are available under /en/.
+
+Vien.noir presents its own stage and dinner-show productions in Vienna and offers artists and bespoke show concepts for private and corporate events. The 2026/27 season features Ladies of Bond, Season of Desire and Santa Baby. For current performance dates, availability and ticket information, use the programme and individual show pages rather than relying on summaries.
+
+Official website: https://www.viennoir.com/
+Primary language: German (de-AT)
+Secondary language: English
+Location: Vienna, Austria
+Site operator/brand context: Vien.noir · Verein Opera Moderne Wien
+
+## Main pages
+
+- [Vien.noir home](https://www.viennoir.com/): Overview of Vien.noir, the 2026/27 season, its artistic concept and current highlights.
+- [Programme 2026/27](https://www.viennoir.com/programm/): Current Vien.noir performance dates and the season programme in Vienna.
+- [About Vien.noir](https://www.viennoir.com/ueber-uns/): Background, history, values and the people behind Vien.noir.
+- [Event services](https://www.viennoir.com/event-services/): Artists and bespoke entertainment concepts for corporate events, galas, weddings and special occasions.
+- [Contact](https://www.viennoir.com/kontakt/): General enquiries, collaborations, ticket questions and event-booking enquiries.
+
+## Shows
+
+- [Ladies of Bond](https://www.viennoir.com/ladies-of-bond-vienna/): A cinematic cabaret thriller inspired by the world of James Bond, featuring live vocals, dance, burlesque and aerial acrobatics.
+- [Season of Desire](https://www.viennoir.com/season-of-desire-vienna/): An opulent Vienna-set stage show blending pop and classical music, live vocals, aerial acrobatics, intrigue and a Bridgerton-inspired atmosphere; includes a show FAQ.
+- [Santa Baby](https://www.viennoir.com/santa-baby-dinner-show/): A festive Christmas dinner show with live music, dance, comedy and theatrical storytelling around the search for Mrs Claus.
+
+## English pages
+
+- [Vien.noir home — English](https://www.viennoir.com/en/): English-language overview of Vien.noir and the current season.
+- [Programme — English](https://www.viennoir.com/en/programme/): English-language performance dates and programme.
+- [Ladies of Bond — English](https://www.viennoir.com/en/ladies-of-bond-vienna/): English-language show page for Ladies of Bond.
+- [Season of Desire — English](https://www.viennoir.com/en/season-of-desire-vienna/): English-language show page for Season of Desire, including the FAQ.
+- [Santa Baby — English](https://www.viennoir.com/en/santa-baby-dinner-show/): English-language show page for Santa Baby.
+- [About — English](https://www.viennoir.com/en/about/): English-language background, history and team information.
+- [Event services — English](https://www.viennoir.com/en/event-services/): English-language information about artists and event entertainment.
+- [Contact — English](https://www.viennoir.com/en/contact/): English-language contact and event-enquiry page.
+
+## Legal and site information
+
+- [Privacy policy — German](https://www.viennoir.com/datenschutz/): German privacy information covering the website, contact form, newsletter and related services.
+- [Privacy policy — English](https://www.viennoir.com/en/privacy/): English privacy information.
+- [XML sitemap](https://www.viennoir.com/sitemap.xml): Canonical list of indexable Vien.noir pages and language alternates.
