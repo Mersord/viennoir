@@ -231,7 +231,7 @@ h4 { font-size: clamp(1.35rem, 2vw, 2rem); }
 }
 
 .button::after {
-  content: "↗";
+  content: none; /* No decorative arrow; form loading indicators may still use ::after. */
   font-size: 0.98rem;
   font-weight: 400;
   transition: transform 0.3s ease;
@@ -1507,16 +1507,6 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: transl
   .mobile-menu { grid-template-columns: 1fr; overflow-y: auto; }
   .mobile-menu__side { margin-top: 50px; padding: 30px 0 0; border-top: 1px solid var(--line); border-left: 0; }
   .home-hero__title { font-size: clamp(4rem, 14vw, 7.4rem); }
-  /* Keep the complete decorative wordmark inside the hero on narrow screens.
-     Desktop retains its existing oversized, cropped treatment. */
-  .home-hero__ghost {
-    left: var(--gutter);
-    right: var(--gutter);
-    bottom: clamp(20px, 4vw, 36px);
-    font-size: 18vw;
-    line-height: 1.1;
-    text-align: center;
-  }
   .intro-grid,
   .story-grid,
   .services-teaser__grid,
