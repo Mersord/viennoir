@@ -1,4 +1,8 @@
 /* Santa Baby: Dinner & Show. Intentionally scoped; no global design changes. */
+/* Temporary, non-visual lock used only while a mobile accordion changes height.
+   It prevents a second browser-driven scroll correction; normal page scrolling
+   and scroll anchoring are restored as soon as the transition has settled. */
+html.sb-layout-changing { overflow-anchor: none; }
 .sb-info {
   --sb-accent: var(--show-accent, #efb76b);
   --sb-ease: cubic-bezier(.22, 1, .36, 1);

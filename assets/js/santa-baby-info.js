@@ -8,16 +8,35 @@
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const mobile = window.matchMedia('(max-width: 759px)');
   const duration = 540;
+  const root = document.documentElement;
   const states = [...grid.querySelectorAll('[data-sb-toggle]')].map((button) => {
     const panel = document.getElementById(button.getAttribute('aria-controls'));
     return panel && { button, panel, inner: panel.firstElementChild, open: false, animation: null };
   }).filter(Boolean);
   if (!states.length || states.some((state) => !state.inner)) return;
 
+  // Disable native scroll anchoring only during our mobile layout change.
+  // Otherwise the browser can compensate a second time when a panel collapses.
+  let layoutBatch = false;
+  let anchoringFrame = 0;
+  const needsAnchoringLock = () => mobile.matches &&
+    (layoutBatch || states.some((state) => state.animation));
+  const updateAnchoring = () => {
+    cancelAnimationFrame(anchoringFrame);
+    if (needsAnchoringLock()) {
+      root.classList.add('sb-layout-changing');
+      return;
+    }
+    // Retain the lock for the final layout frame, including the return to auto.
+    anchoringFrame = requestAnimationFrame(() => {
+      if (!needsAnchoringLock()) root.classList.remove('sb-layout-changing');
+    });
+  };
   const settle = (state) => {
     state.panel.hidden = !state.open;
     state.panel.style.height = '';
     state.animation = null;
+    updateAnchoring();
   };
   const setPanel = (state, open, animate = true) => {
     const { panel, button, inner } = state;
@@ -47,6 +66,7 @@
     ], { duration, easing: 'cubic-bezier(.22, 1, .36, 1)' });
     panel.style.height = `${end}px`;
     state.animation = animation;
+    updateAnchoring();
     animation.finished.then(() => {
       if (state.animation === animation) settle(state);
     }).catch(() => { /* Cancellation is expected when clicking or resizing. */ });
@@ -54,60 +74,69 @@
   states.forEach((state) => setPanel(state, false, false));
   section.classList.add('sb-ready');
 
-  // Keep the selected mobile card in view while earlier content collapses.
-  // Stop immediately when the visitor starts scrolling or interacting again.
-  let stopFollowing = () => {};
-  const followCard = (button) => {
-    stopFollowing();
-    if (!mobile.matches) return;
-    const header = document.querySelector('[data-header]');
-    const safeTop = (header ? Math.max(0, header.getBoundingClientRect().bottom) : 0) + 18;
-    const origin = button.getBoundingClientRect().top;
-    if (motion.matches) {
-      requestAnimationFrame(() => {
-        window.scrollBy({ top: button.getBoundingClientRect().top - safeTop, behavior: 'instant' });
+  // A single, synchronous compensation, never a per-frame scrolling loop.
+  // Explicitly override the site's smooth scrolling for this layout correction;
+  // this also works in older Safari versions without behavior: "instant".
+  const compensateScroll = (top) => {
+    const limit = Math.max(0, root.scrollHeight - root.clientHeight);
+    const target = Math.max(0, Math.min(limit, top));
+    if (Math.abs(window.scrollY - target) < 1) return;
+    const value = root.style.getPropertyValue('scroll-behavior');
+    const priority = root.style.getPropertyPriority('scroll-behavior');
+    root.style.setProperty('scroll-behavior', 'auto', 'important');
+    try {
+      window.scrollTo({ top: target, left: window.scrollX, behavior: 'auto' });
+    } finally {
+      if (value) root.style.setProperty('scroll-behavior', value, priority);
+      else root.style.removeProperty('scroll-behavior');
+    }
+  };
+  const setSelection = (state, open) => {
+    if (!mobile.matches) {
+      // Preserve the original desktop transition and layout.
+      states.forEach((other) => {
+        if (other !== state && other.open) setPanel(other, false);
       });
+      setPanel(state, open);
       return;
     }
-    const started = performance.now();
-    let frame = 0;
-    let stopped = false;
-    const interruptions = ['wheel', 'touchmove', 'pointerdown', 'keydown'];
-    const stop = () => {
-      stopped = true;
-      cancelAnimationFrame(frame);
-      interruptions.forEach((type) => window.removeEventListener(type, stop));
-    };
-    stopFollowing = stop;
-    interruptions.forEach((type) => window.addEventListener(type, stop, { passive: true }));
-    const tick = (now) => {
-      if (stopped) return;
-      const progress = Math.min(1, (now - started) / duration);
-      const eased = 1 - Math.pow(1 - progress, 4);
-      const target = origin + (safeTop - origin) * eased;
-      const delta = button.getBoundingClientRect().top - target;
-      if (Math.abs(delta) > .5) window.scrollBy({ top: delta, behavior: 'instant' });
-      const unfolding = states.some((state) => state.animation && state.animation.playState === 'running');
-      if (progress < 1 || unfolding) frame = requestAnimationFrame(tick);
-      else stop();
-    };
-    frame = requestAnimationFrame(tick);
-  };
-  const toggle = (state) => {
-    const open = !state.open;
-    followCard(state.button);
-    states.forEach((other) => {
-      if (other !== state && other.open) setPanel(other, false);
-    });
-    setPanel(state, open);
+
+    layoutBatch = true;
+    updateAnchoring();
+    try {
+      const { button } = state;
+      const header = document.querySelector('[data-header]');
+      const safeTop = (header ? Math.max(0, header.getBoundingClientRect().bottom) : 0) + 18;
+      const before = button.getBoundingClientRect();
+      // Normally the card stays exactly where it was tapped. Only a hidden card
+      // (e.g. when closing with Escape) is brought back below the fixed header.
+      const anchorTop = before.top < safeTop || before.top >= window.innerHeight - 44
+        ? safeTop : before.top;
+      const selectedIndex = states.indexOf(state);
+      states.forEach((other, index) => {
+        if (other === state) return;
+        if (index < selectedIndex && !other.panel.hidden) {
+          // Close preceding content in this same task and compensate once.
+          // Its height must not keep moving the selected card during unfolding.
+          // Also finish an already-closing panel after a rapid second tap.
+          setPanel(other, false, false);
+        } else if (other.open) {
+          setPanel(other, false);
+        }
+      });
+      setPanel(state, open);
+      compensateScroll(window.scrollY + button.getBoundingClientRect().top - anchorTop);
+    } finally {
+      layoutBatch = false;
+      updateAnchoring();
+    }
   };
   states.forEach((state) => {
-    state.button.addEventListener('click', () => toggle(state));
+    state.button.addEventListener('click', () => setSelection(state, !state.open));
     state.panel.querySelectorAll('[data-sb-close]').forEach((button) => {
       button.addEventListener('click', () => {
-        followCard(state.button);
         state.button.focus({ preventScroll: true });
-        setPanel(state, false);
+        setSelection(state, false);
       });
     });
   });
@@ -117,9 +146,8 @@
     const current = states.find((state) => state.open);
     if (!current) return;
     event.preventDefault();
-    followCard(current.button);
     current.button.focus({ preventScroll: true });
-    setPanel(current, false);
+    setSelection(current, false);
   });
 
   // The height is returned to 'auto' after every transition. Font loads,
@@ -128,7 +156,6 @@
   window.addEventListener('resize', () => {
     if (previousWidth === window.innerWidth) return;
     previousWidth = window.innerWidth;
-    stopFollowing();
     states.forEach((state) => {
       if (state.animation) state.animation.cancel();
       settle(state);
@@ -136,7 +163,6 @@
   }, { passive: true });
   motion.addEventListener('change', () => {
     if (!motion.matches) return;
-    stopFollowing();
     states.forEach((state) => {
       if (state.animation) state.animation.cancel();
       settle(state);
@@ -163,7 +189,6 @@
   const image = dialog.querySelector('[data-sb-plan-image]');
   const zoomButton = dialog.querySelector('[data-sb-zoom]');
   const zoomLabel = zoomButton && zoomButton.querySelector('span');
-  const root = document.documentElement;
   if (!viewer || !image || !zoomButton || !zoomLabel) return;
   let opener = null;
   let closing = false;
