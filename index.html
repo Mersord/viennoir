@@ -40,8 +40,12 @@
 <link as="image" fetchpriority="high" href="assets/media/VienNoirSmoke-poster.webp" rel="preload"/>
 <link href="assets/css/site-performance.css?v=autoplay2" rel="stylesheet"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"PerformingGroup","@id":"https://viennoir.com/#organization","name":"Vien.noir","alternateName":"Vien Noir","legalName":"Verein Opera Moderne Wien","url":"https://viennoir.com/","logo":{"@type":"ImageObject","url":"https://viennoir.com/assets/img/VienNoir/ViennoirLogo-white-TRANSPARENT.png"},"email":"office@viennoir.com","address":{"@type":"PostalAddress","addressLocality":"Wien","addressCountry":"AT"},"sameAs":["https://instagram.com/vien.noir.official","https://facebook.com/vien.noir.official","https://tiktok.com/@vien.noir.official","https://www.linkedin.com/company/vien-noir","https://youtube.com/@viennoir9043"]},{"@type":"WebSite","@id":"https://viennoir.com/#website","url":"https://viennoir.com/","name":"Vien.noir","alternateName":"Vien Noir","inLanguage":["de-AT","en"],"publisher":{"@id":"https://viennoir.com/#organization"}},{"@type":"WebPage","@id":"https://viennoir.com/#webpage","url":"https://viennoir.com/","name":"Vien.noir – Dinnershows & Live-Entertainment in Wien","description":"Wiens elegante Live-Entertainment-Welt aus Musik, Luftakrobatik, Tanz und Burlesque. Entdecken Sie Ladies of Bond, Season of Desire und Santa Baby.","inLanguage":"de-AT","isPartOf":{"@id":"https://viennoir.com/#website"},"about":{"@id":"https://viennoir.com/#organization"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://viennoir.com/assets/img/VienNoir/ViennoirLogo-white-TRANSPARENT.png","caption":"Vien.noir - Vienna after dark"}}]}</script>
+
+<!-- Consent-gated GA4: do not add a second, unconditional Google tag. -->
+<link href="assets/css/privacy-consent.css?v=20261016-ga4-1" rel="stylesheet"/>
+<script defer src="assets/js/privacy-analytics.js?v=20261016-ga4-1"></script>
 </head>
-<body class="home-page">
+<body class="home-page" data-vn-page-type="home">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <header class="site-header" data-header="">
 <div class="header-inner">
@@ -134,7 +138,7 @@
 <p class="show-feature__tagline">Fünf Frauen. Eine Legende. Eine Akte, die sich öffnet.</p>
 <p class="show-feature__copy">Die Welt des berühmtesten Geheimagenten – neu erzählt aus der Perspektive der Frauen, die sie geprägt haben.</p>
 <p class="show-feature__date">18. September 2026 · 12. März &amp; 16. April 2027</p>
-<div class="button-row"><a class="button" href="ladies-of-bond-vienna/">Zur Show</a><a class="button button--gold" href="ladies-of-bond-vienna/#termine">Tickets</a></div>
+<div class="button-row"><a class="button" href="ladies-of-bond-vienna/">Zur Show</a><a class="button button--gold" href="ladies-of-bond-vienna/#termine" data-vn-event="ticket_interest" data-vn-show-name="Ladies of Bond" data-vn-position="homepage_show_card">Tickets</a></div>
 </div>
 </article>
 <article class="show-feature show-feature--desire" data-reveal="" data-tilt="">
@@ -151,7 +155,7 @@
 <p class="show-feature__tagline">Bridgerton inspired. Verführerisch wienerisch.</p>
 <p class="show-feature__copy">Ein Ball, ein Liebesdreieck und eine Gesellschaft, in der jedes Lächeln eine Absicht verbirgt.</p>
 <p class="show-feature__date">16. Oktober 2026 · 22. Jänner &amp; 19. Februar 2027</p>
-<div class="button-row"><a class="button" href="season-of-desire-vienna/">Zur Show</a><a class="button button--gold" href="https://vindobona.wien/events/ladies-of-bond-3" rel="noopener" target="_blank">Tickets</a></div>
+<div class="button-row"><a class="button" href="season-of-desire-vienna/">Zur Show</a><a class="button button--gold" href="https://vindobona.wien/events/ladies-of-bond-3" rel="noopener" target="_blank" data-vn-event="ticket_click" data-vn-show-name="Season of Desire" data-vn-position="homepage_show_card" data-vn-show-date="2026-10-16">Tickets</a></div>
 </div>
 </article>
 <article class="show-feature show-feature--santa" data-reveal="" data-tilt="">
@@ -168,7 +172,7 @@
 <p class="show-feature__tagline">Die Suche nach Mrs. Claus.</p>
 <p class="show-feature__copy">Glitzer, große Stimmen und charmantes Chaos: Santa ist Single und seine Elfen haben längst einen Plan.</p>
 <p class="show-feature__date">27. &amp; 28. November · 9. &amp; 10. Dezember 2026</p>
-<div class="button-row"><a class="button" href="santa-baby-dinner-show/">Zur Show</a><a class="button button--gold" href="https://vindobona.wien/events/santa-baby-die-suche-nach-mrs-claus" rel="noopener" target="_blank">Tickets</a></div>
+<div class="button-row"><a class="button" href="santa-baby-dinner-show/">Zur Show</a><a class="button button--gold" href="https://vindobona.wien/events/santa-baby-die-suche-nach-mrs-claus" rel="noopener" target="_blank" data-vn-event="ticket_click" data-vn-show-name="Santa Baby" data-vn-position="homepage_show_card" data-vn-show-date="2026-11-27">Tickets</a></div>
 </div>
 </article>
 </div>
@@ -320,7 +324,7 @@
 </div>
 <div class="shell footer-bottom">
 <span>© <span data-year="">2026</span> Vien.noir · Verein Opera Moderne Wien</span>
-<span class="footer-bottom__links"><a href="datenschutz/">Datenschutz</a><a href="kontakt/">Impressum &amp; Kontakt</a></span>
+<span class="footer-bottom__links"><a href="datenschutz/">Datenschutz</a><a href="kontakt/">Impressum &amp; Kontakt</a><a href="datenschutz/#privacy-settings" data-vn-privacy-settings="" aria-haspopup="dialog" aria-controls="vn-consent-dialog">Datenschutzeinstellungen</a></span>
 </div>
 </footer>
 <script defer="" src="assets/js/site.js?v=autoplay2"></script>
